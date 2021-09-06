@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEL-CON</title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+</head>
+
+<body>
+    <div id="wrapper">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <img src="{% static 'img/logobelcon.png' %}" id="logo"/>
+        <div id="header">
+
+            <p>Welcome to the new hire portal of Belcon Construction Services, Inc. As part of the new hire process, please start by clicking the button below. Before you continue through the process, please make sure to have all your documents handy (banking information, forms of identification - example: Driver's Licence, Passport, Social Security Card). Once you register, you will have to fill out all documents and will not be able to come back to this again. The process takes approximately 10 mins so please make sure to complete this in ONE seating.</p>
+
+            <button onclick="disappear()">Accept & Continue</button>
+
+        </div>
+
+        <div id=form1>
+            <div class="form-style-2">
+                <div class="form-style-2-heading">Employee Information</div>
+                <form action="/create_profile" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="field0"><span>Start Date <span class="required">*</span></span><input type="date" class="input-field" name="field0" value="" required/></label>
+
+                    <label for="field1"><span> Employee First Name <span class="required">*</span></span><input type="text"
+                            class="input-field" name="field1" value="" required/></label>
+
+                            <!-- Changed this to not required as she changed her mind and did not want it required -->
+                    <label for="minitial"><span> Employee Middle Initial</span><input type="text"
+                                class="input-field" name="minitial" value=""/></label>        
+
+                    <label for="lastname"><span> Employee Last Name <span class="required">*</span></span><input type="text"
+                                    class="input-field" name="lastname" value="" required/></label> 
+
+                    <label for="field2"><span>Date Of Birth <span class="required">*</span></span><input type="date"
+                            class="input-field" name="field2" value="" required/></label>
+
+                    <label for="field3"><span>Cell Phone:<span class="required">*</span></span><input type="text"
+                            class="tel-number-field" name="field3" value="" maxlength="3" />-<input type="text"
+                            class="tel-number-field" name="field3" value="" maxlength="3" />-<input type="text"
+                            class="tel-number-field" name="field3" value="" maxlength="4" required/></label>
+
+                    <label for="field4"><span>Email <span class="required">*</span></span><input type="email"
+                            class="input-field" name="field4" value="" required/></label>
+
+        <!-- Changed pattern and added max 9 on this with JS-->
+                    <label for="field5"><span>Social Security Number <span class="required">*</span></span><input
+                            type="number" class="input-field" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==9) return false;" name="field5" value="" required/></label>
+                    <br><br><br>
+
+                    <div class="form-style-2-heading">Employee Information: Address</div>
+
+                    <label for="field6"><span>Street:<span class="required">*</span></span><input type="text"
+                            class="input-field" name="field6" value="" required/></label>
+
+                    <label for="field7"><span>City:<span class="required">*</span></span><input type="text"
+                            class="input-field" name="field7" value="" required/></label>
+
+                    <label for="field8"><span>State:<span class="required">*</span></span><input type="text"
+                            class="input-field" name="field8" value="" required/></label>
+
+                    <label for="field9"><span>Zipcode:<span class="required">*</span></span><input type="text"
+                            class="input-field" name="field9" value="" pattern="[0-9]{5}" required/></label>
+                    <br><br><br>
+
+                    <div class="form-style-2-heading">Employee Other Information</div>
+
+                    <label for="field10"><span>UBIC Number <span class="required">*</span></span><input type="text"
+                            class="input-field" name="field10" value="" required/></label>
+
+                    <label for="field11"><span>Union <span class="required">*</span></span><select name="field11" class="select-field">
+                            <option value="" disabled selected hidden></option>
+                            <option value="carpenters">Carpenters Union</option>
+                            <option value="laborers">Laborers Union</option>
+                            <option value="painters">Painters Union</option>
+                            <option value="tapers">Tapers Union</option>
+                        </select></label>
+
+                    <label for="field12"><span>Local# <span class="required">*</span></span><input type="text"
+                            class="input-field" name="field12" value="" required/></label>
+
+                    <label for="field13"><span>Position <span class="required">*</span></span><select name="field13" class="select-field">
+                            <option value="" disabled selected hidden></option>
+                            <option value="year1">Apprentice Year 1</option>
+                            <option value="year2">Apprentice Year 2</option>
+                            <option value="year3">Apprentice Year 3</option>
+                            <option value="year4">Apprentice Year 4</option>
+                            <option value="year5">Apprentice Year 5</option>
+                            <option value="foreman">Foreman</option>
+                            <option value="journeyman">Journeyman</option>
+                        </select></label>
+
+                    <label for="field14"><span>Gender <span class="required">*</span></span><input type="radio" value="none" id="radio_1"
+                            name="field14" />Male
+                        <input type="radio" value="none" id="radio_2" name="field14" />Female
+                    </label>
+
+                    <label for="field15"><span>Company Anti-Discrimination Policy Selection: <span class="required">*</span></span><select
+                            name="field15" class="select-field">
+                            <option value="" disabled selected hidden></option>
+                            <option value="hispanic">Hispanic or Latino</option>
+                            <option value="white">White</option>
+                            <option value="black">Black or African American</option>
+                            <option value="Asian">Asian</option>
+                            <option value="native">Native Hawaiian or Pacific Islander</option>
+                            <option value="american">American Indian or Alaska Native</option>
+                            <option value="two">Two or more races</option>
+                            <option value="nodisclosure">I do not wish to disclose</option>
+                        </select></label>
+
+                    <label for="field16"><span>I hereby consent and agree to give a specimen of my urine at a medical
+                            facility designated by Bel-Con, if Bel-Con randomly chooses to test from
+                            Drugs/Alcohol. <span class="required">*</span></span><input type="radio" value="none" id="radio_3" name="field16" />Yes
+                        <input type="radio" value="none" id="radio_4" name="field16" />No
+                    </label>
+                    <br><br><br><br><br><br>
+
+                    <div class="form-style-2-heading">Banking Information</div>
+
+                    <label for="field17" onchange="yesnoCheck()"><span>Direct Deposit</span><input type="radio" value="Yes" id="radio_5"
+                            name="field17" />Yes
+                        <input type="radio" value="No" id="radio_6" name="field17" />No
+                    </label>
+                
+                    <p>*By selecting No, your check will be mailed with USPS. We do not control the length of time
+                        it takes to receive your check. If you select Yes, you will be able to enter your bank details along with uploading a voided check.</p>
+
+                    <div id="bank" hidden>
+                     <label for="field18"><span>Bank Name: </span><input type="text" class="input-field" name="field18"
+                            value="" /></label>
+
+                    <label for="field19"><span>Routing #: </span><input type="text" class="input-field" name="field19"
+                            value="" /></label>
+
+                    <label for="field20"><span>Account #: </span><input type="text" class="input-field" name="field20"
+                            value="" /></label>
+                    
+                            <label for="direct_deposit_check"><span>Upload a picture of the acceptable documents above:</span><input
+                                type="file" class="input-field" name="direct_deposit_check" /></label><br><br>
+                        </div>
+                    <br>
+                    <br>
+                    
+
+                    <!-- <label for="field5"><span>Message <span class="required">*</span></span><textarea name="field5" class="textarea-field"></textarea></label> -->
+
+                    <div class="form-style-2-heading">W-4 Employee Withholding Allowances Information</div>
+
+                    <label for="field21"><span>1a. Filing Status:</span><select name="field21" class="select-field">
+                            <option value="" disabled selected hidden></option>
+                            <option value="single">Single</option>
+                            <option value="joint">Married filing together</option>
+                            <option value="separate">Married filing separate</option>
+                            <option value="head">Head of household</option>
+                            <option value="widow">Qualifying widow</option>
+                        </select></label>
+
+                    <label for="field22"><span>1b. Total Number of Allowances you are claiming:</span><select
+                            name="field22" class="select-field">
+                            <option value="" disabled selected hidden></option>
+                            <option value="zero">0</option>
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="five">5</option>
+                            <option value="six">6</option>
+                            <option value="seven">7</option>
+                            <option value="eight">8</option>
+                            <option value="nine">9</option>
+                            <option value="ten">10</option>
+                        </select></label><br><br>
+
+                    <h3><span>Complete Steps 2–4 ONLY if they apply to you; otherwise, skip to I-9 Employment
+                            Eligibility Verification.</span> </h3><br><br>
+
+                    <label for="field23"><span>2. Only select yes here if there are only 2 jobs in total.</span><input
+                            type="radio" value="none" id="radio_7" name="field23" />Yes
+                        <input type="radio" value="none" id="radio_8" name="field23" />No
+                    </label>
+                    <br><br>
+
+                    <h3><span>3. Claim Dependents: If your total income will be $200,000 or less ($400,000 or less if
+                            married filing jointly):
+                        </span></h3><br><br>
+
+                    <label for="field24"><span>3a. Multiply the number of qualifying children under age 17 by
+                            $2,000</span><input type="number" class="input-field" name="field24" value="" /></label>
+
+                    <label for="field25"><span>3b. Multiply the number of other dependents by $500:</span><input
+                            type="number" class="input-field" name="field25" value="" /></label>
+
+                    <label for="field26"><span>3c. Add the amounts above and enter the total here:</span><input
+                            type="number" class="input-field" name="field26" value="" /></label> <br><br>
+
+                    <h3><span>4. Other Adjustments (Optional):</span></h3>
+
+                    <label for="field27"><span>4a. Other income (not from jobs). If you want tax withheld for other
+                            income you expect this year that won’t have withholding, enter the amount of other income
+                            here. This may include interest, dividends, and retirement income:</span><br><br><input
+                            type="number" class="input-field" name="field27" value="" /></label> <br><br><br>
+
+                    <label for="field28"><span>4b. Deductions. If you expect to claim deductions other than the standard
+                            deduction and want to reduce your withholding, use the Deductions Worksheet on page 3 and
+                            enter the result here:</span><br><br><input type="number" class="input-field" name="field28"
+                            value="" /></label><br><br><br>
+
+                    <label for="field29"><span>4c. Extra withholding. Enter any additional tax you want withheld each
+                            pay period .</span><br><input type="number" class="input-field" name="field29"
+                            value="" /></label><br><br>
+
+                    <h3>Step 2(b) - Multiple Jobs Worksheet</h3><br>
+                    <label for="field30"><span>1. If you have two jobs or you’re married filing jointly and you and your
+                            spouse each have one job, find the amount from the appropriate table on page 4. Using the
+                            “Higher Paying Job” row and the “Lower Paying Job” column, find the value at the
+                            intersection of the two household salaries and enter that value on line 1. Then, skip to
+                            line 3:</span><br><br><br><input type="number" class="input-field" name="field30"
+                            value="" /></label>
+                    <br><br><br><br>
+
+                    <h3><span>2. Three jobs. If you and/or your spouse have three jobs at the same time, complete lines
+                            2a, 2b, and 2c below. Otherwise, skip to line 3 where you see the arrow.</span></h3>
+
+                    <label for="field31"><span>2a. Find the amount from the appropriate table on page 4 using the annual
+                            wages from the highest paying job in the “Higher Paying Job” row and the annual wages for
+                            your next highest paying job in the “Lower Paying Job” column. Find the value at the
+                            intersection of the two household salaries and enter that value on line
+                            2a.</span><br><br><br><input type="number" class="input-field" name="field31"
+                            value="" /></label>
+                    <br><br><br><br><br>
+
+                    <label for="field32"><span>2b. Add the annual wages of the two highest paying jobs from line 2a
+                            together and use the total as the wages in the “Higher Paying Job” row and use the annual
+                            wages for your third job in the “Lower Paying Job” column to find the amount from the
+                            appropriate table on page 4 and enter this amount on line 2b.</span><br><br><br><input
+                            type="number" class="input-field" name="field32" value="" /></label>
+                    <br><br><br><br><br>
+
+                    <label for="field100"><span>2c. Add the amounts from lines 2a and 2b and enter the result on line
+                            2c.</span><input type="number" class="input-field" name="field100" value="" /></label>            <a href="https://www.animatedimages.org/cat-arrows-111.htm"><img id="the_arrow" src="https://www.animatedimages.org/data/media/111/animated-arrow-image-0509.gif" border="0" alt="animated-arrow-image-0509" /></a>
+                    <br><br><br><br>
+                    <label for="field101"><span>3. Enter the number of pay periods per year for the highest paying job.
+                            For example, if that job pays weekly, enter 52; if it pays every other week, enter 26; if it
+                            pays monthly, enter 12, etc. .</span><br><br><br><input type="number" class="input-field"
+                            name="field101" value="" /></label>
+                    <br><br><br><br>
+
+                    <label for="field33"><span>4. Divide the annual amount on line 1 or line 2c by the number of pay
+                            periods on line 3. Enter this amount here and in Step 4(c) of Form W-4 for the highest
+                            paying job (along with any other additional amount you want withheld).</span><input
+                            type="number" class="input-field" name="field33" value="" /></label>
+                    <br><br><br><br><br>
+
+                    <h3>Step 4(b)—Deductions Worksheet </h3><br><br>
+
+                    <label for="field34"><span>1. Enter an estimate of your 2021 itemized deductions (from Schedule A
+                            (Form 1040)). Such deductions may include qualifying home mortgage interest, charitable
+                            contributions, state and local taxes (up to $10,000), and medical expenses in excess of 7.5%
+                            of your income.</span><input type="number" class="input-field" name="field34"
+                            value="" /></label>
+                    <br><br><br><br><br><br>
+
+
+                    <label for="field35"><span>2. Enter: { • $25,100 if you’re married filing jointly or qualifying
+                            widow(er).<br>• $18,800 if you’re head of household.<br> • $12,550 if you’re single or
+                            married filing separately. }</span><input type="number" class="input-field" name="field35"
+                            value="" /></label>
+                    <br><br><br><br>
+
+                    <label for="field36"><span>3. If line 1 is greater than line 2, subtract line 2 from line 1 and
+                            enter the result here. If line 2 is greater than line 1, enter “-0-”.</span><input
+                            type="number" class="input-field" name="field36" value="" /></label>
+                    <br><br><br><br>
+
+                    <label for="field37"><span>4. Enter an estimate of your student loan interest, deductible IRA
+                            contributions, and certain other adjustments (from Part II of Schedule 1 (Form 1040)). See
+                            Pub. 505 for more information.</span><input type="number" class="input-field" name="field37"
+                            value="" /></label>
+                    <br><br><br><br>
+
+                    <label for="field38"><span>5. Add lines 3 and 4. Enter the result here and in Step 4(b) of Form
+                            W-4.</span><input type="number" class="input-field" name="field38" value="" /></label>
+
+                    <a href="https://www.irs.gov/pub/irs-pdf/fw4.pdf" target="_blank" style="text-align:center">Click here to refrence the form</a>
+
+                    <br><br><br><br><br>
+
+                    <div class="form-style-2-heading">I-9 Employment Eligibility Verification</div>
+
+                    <label for="field39"><span>I am aware that federal law provides for imprisonment and/or fines for
+                            false statements or use of false documents in connection with this information. <br><br>I
+                            attest, under penalty of perjury, that I am:</span><br><br><br><br><br><select
+                            name="field39" class="select-field" onchange="immi_status()" id="immigration_status">
+                            <option value="" disabled selected hidden></option>
+                            <option value="citizen">1. Citizen of the United States</option>
+                            <option value="noncitizen">2. A noncitizen of the United States</option>
+                            <option value="pr">3. A lawful permanent resident</option>
+                            <option value="alien">4. An alien authorized to work</option>
+                        </select></label>
+                        <p id="changed" hidden></p>
+                    <br><br><br><br>
+                    <h3><span>Details to fill if selecting option 3 from the above dropdown</span></h3><br><br>
+
+                    <label for="field40"><span>Alien Restriation Number/ USCIS Number:</span><br><input type="text"
+                           id="pr_number" readonly class="input-field" name="field40" value="" /></label><br><br>
+
+                    <h3><span>Details to fill if selecting option 4 from the above dropdown - please fill out the
+                            expiration date or do not fill if non applicable</span></h3><br><br>
+
+                    <label for="field41"><span>Expiration Date, if applicable :</span><br><input type="date"
+                            class="input-field" name="field41" value="" /></label><br><br>
+
+                    <h3><span>If you selected option 4, you will have to fill only 1 of the 3 below: </span></h3>
+                    <br><br>
+
+                    <label for="field42"><span>1. Alien Restriation Number/ USCIS Number:</span><br><input type="text"
+                           id="alien_1" readonly class="input-field" name="field42" value="" /></label>
+
+                    <label for="field43"><span>2. Form I-94 Admission Number:</span><br><input type="text"
+                        id="alien_2"  readonly  class="input-field" name="field43" value="" /></label>
+
+                    <label for="field44"><span>3. Foreign Passport Number and Country of Issuance:</span><br><input
+                        id="alien_3"  readonly type="text" class="input-field" name="field44" value="" /></label>
+                    <br><br>
+
+                    <!-- <label for="field45"><span>Select applicable documents:</span><select name="field45"
+                            class="select-field">
+                            <option value="" disabled selected hidden></option>
+                            <option value="passport">Passport</option>
+                            <option value="pr-card">Permanent Resident Card</option>
+                            <option value="ead">Employment Authorization Document</option>
+                            <option value="dr-ss">Drivers Licence/ID and Social Security Card</option>
+                            <option value="dr-bc">Drivers Licence/ID and Birth Certificate</option>
+                        </select></label> -->
+
+
+                        <label for="id_1"><span>Upload a picture of the acceptable documents for the i9 form - 1:</span><input
+                                type="file" class="input-field" name="id_1" /></label><br><br>
+                                <label for="id_2"><span>Upload a picture of the acceptable documents above - 2:</span><input
+                                    type="file" class="input-field" name="id_2" /></label><br><br>
+
+                    <p>Under penalties of perjury, I declare that this certificate, to the best of my knowledge and
+                        belief, is true, correct, and complete<br><br>Employee's Signature:</p>
+                    <div>
+                        <div id="canvas_1">
+                            <!-- Start This is the canvas functionality -->
+                            <img hidden src="" id="imgConverted"
+                                style="float: left; background: none; border: 2px solid blue ;"
+                                alt="This is the signature">
+                            <canvas id="canvas" style="border:black solid 1px;" width="500" height="150"></canvas>
+
+                            <!-- End This is the canvas functionality -->
+                            <input type="hidden" name="signature" value="" id="sign1"><br>
+                        </div><br>
+                        <h5 id="thanks_signed" hidden>Thank you for signing! We will use this signature for all your
+                            documents! If you need to resign, please click on the below button</h5>
+                        <button class="all_buttons" id="clear_button" type="button" onclick="myFunction()">Clear &
+                            Re-Sign</button>
+                        <input class="all_buttons" onclick="saveSignature()" type="button" id="save1"
+                            value="Save Signature">
+                    </div><br>
+                    <p hidden id="the_submit"><input class="all_buttons" type="submit" value="Save Profile"></p>
+
+                </form>
+                </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // This is the canvas signing function
+        ; (function () {
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            ctx.strokeStyle = "#222222";
+            ctx.lineWith = 2;
+            // Set up mouse events for drawing
+            var drawing = false;
+            var mousePos = { x: 0, y: 0 };
+            var lastPos = mousePos;
+            canvas.addEventListener("mousedown", function (e) {
+                drawing = true;
+                lastPos = getMousePos(canvas, e);
+            }, false);
+            canvas.addEventListener("mouseup", function (e) {
+                drawing = false;
+            }, false);
+            canvas.addEventListener("mousemove", function (e) {
+                mousePos = getMousePos(canvas, e);
+            }, false);
+
+            // Get the position of the mouse relative to the canvas
+            function getMousePos(canvasDom, mouseEvent) {
+                var rect = canvasDom.getBoundingClientRect();
+                return {
+                    x: mouseEvent.clientX - rect.left,
+                    y: mouseEvent.clientY - rect.top
+                };
+            }
+
+            // Get a regular interval for drawing to the screen
+            window.requestAnimFrame = (function (callback) {
+                return window.requestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.oRequestAnimationFrame ||
+                    window.msRequestAnimaitonFrame ||
+                    function (callback) {
+                        window.setTimeout(callback, 1000 / 60);
+                    };
+            })();
+
+            // Draw to the canvas
+            function renderCanvas() {
+                if (drawing) {
+                    ctx.moveTo(lastPos.x, lastPos.y);
+                    ctx.lineTo(mousePos.x, mousePos.y);
+                    ctx.stroke();
+                    lastPos = mousePos;
+                }
+            }
+
+            // Allow for animation
+            (function drawLoop() {
+                requestAnimFrame(drawLoop);
+                renderCanvas();
+            })();
+
+            // Set up touch events for mobile, etc
+            canvas.addEventListener("touchstart", function (e) {
+                mousePos = getTouchPos(canvas, e);
+                var touch = e.touches[0];
+                var mouseEvent = new MouseEvent("mousedown", {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY
+                });
+                canvas.dispatchEvent(mouseEvent);
+            }, false);
+            canvas.addEventListener("touchend", function (e) {
+                var mouseEvent = new MouseEvent("mouseup", {});
+                canvas.dispatchEvent(mouseEvent);
+            }, false);
+            canvas.addEventListener("touchmove", function (e) {
+                var touch = e.touches[0];
+                var mouseEvent = new MouseEvent("mousemove", {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY
+                });
+                canvas.dispatchEvent(mouseEvent);
+            }, false);
+
+            // Get the position of a touch relative to the canvas
+            function getTouchPos(canvasDom, touchEvent) {
+                var rect = canvasDom.getBoundingClientRect();
+                return {
+                    x: touchEvent.touches[0].clientX - rect.left,
+                    y: touchEvent.touches[0].clientY - rect.top
+                };
+            }
+
+            // Prevent scrolling when touching the canvas
+            document.body.addEventListener("touchstart", function (e) {
+                if (e.target == canvas) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            document.body.addEventListener("touchend", function (e) {
+                if (e.target == canvas) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            document.body.addEventListener("touchmove", function (e) {
+                if (e.target == canvas) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        })()
+
+        function myFunction() {
+            canvas.width = canvas.width;
+            document.getElementById('thanks_signed').hidden = true
+            document.getElementById('canvas_1').hidden = false
+        }
+
+        function saveSignature() {
+            var dataURI = canvas.toDataURL("image/png");
+            sign1.value = dataURI;
+            imgConverted.src = dataURI;
+            document.getElementById('canvas_1').hidden = true
+            document.getElementById('thanks_signed').hidden = false
+            document.getElementById('the_submit').hidden = false
+
+        }
+    </script>
+
+
+<script>
+    document.getElementById("form1").style.visibility = "hidden";
+</script>
+
+<script type="text/javascript">
+    function disappear() {
+        document.getElementById("header").style.display = "none";
+        document.getElementById("form1").style.visibility = "visible";
+    }
+</script>
+
+<script type="text/javascript">
+function yesnoCheck() {
+if (document.getElementById("radio_5").checked) {
+    document.getElementById("bank").style.display = "block";
+} else {
+    document.getElementById("bank").style.display = "none";
+}
+}
+
+</script>
+
+<!-- JS for pr_number/alien -->
+<script>
+    function immi_status(){
+        var x = document.getElementById("immigration_status").value;
+        if(x == 'pr'){
+            document.getElementById("changed").innerHTML = "You selected: " + x;
+            document.getElementById('pr_number').readOnly = false;
+            document.getElementById('alien_1').readOnly = true;
+            document.getElementById('alien_2').readOnly = true;
+            document.getElementById('alien_3').readOnly = true;
+            var y = document.getElementById("changed").innerHTML
+            console.log(y)
+        }
+        else if(x == 'alien'){
+            document.getElementById('pr_number').readOnly = true;
+            document.getElementById('alien_1').readOnly = false;
+            document.getElementById('alien_2').readOnly = false;
+            document.getElementById('alien_3').readOnly = false;
+            console.log("alien")
+        }
+        else{
+            document.getElementById('pr_number').readOnly = true;
+            document.getElementById('alien_1').readOnly = true;
+            document.getElementById('alien_2').readOnly = true;
+            document.getElementById('alien_3').readOnly = true;
+        }
+    }
+
+
+</script>
+</body>
+
+</html>

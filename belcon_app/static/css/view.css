@@ -1,0 +1,281 @@
+.w4-page1{
+    position: relative;
+    text-align: center;
+    
+}
+
+.wrapper{
+    margin: auto;
+    width: 992px;
+    height: auto;
+    font-size: 10.5pt;
+    font-family:Arial, Helvetica, sans-serif
+    }
+
+@media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
+
+.w-i-form{
+    position: relative;
+    width: 992px;
+}
+
+.first{
+    position: absolute;
+    left: 181px;
+    top: 142px;
+    
+}
+
+.last{
+    position: absolute;
+    top: 142px;
+    left: 450px;
+}
+
+.social{
+    position: absolute;
+    top: 142px;
+    left: 797px;
+}
+
+.street{
+    position: absolute;
+    top: 182px;
+    left: 180px;
+}
+
+.city{
+    position: absolute;
+    top: 222px;
+    left: 182px;
+}
+
+#w41{
+position: absolute;
+height: 100px;
+left: 70px;
+top: 991px;
+}
+
+.step3_a{
+    position: absolute;
+    top: 667px;
+    left: 670px;
+}
+
+.step3_b{
+    position: absolute;
+    top: 707px;
+    left: 670px;
+}
+
+.step3c_total{
+    position: absolute;
+    top: 745px;
+    left: 835px;
+}
+
+.step4_a{
+    position: absolute;
+    top: 803px;
+    left: 835px;
+}
+
+.step4_b{
+    position: absolute;
+    top: 882px;
+    left: 835px;
+}
+
+.step4_c{
+    position: absolute;
+    top: 922px;
+    left: 835px;
+}
+
+.step2b1{
+    position: absolute;
+    top: 260px;
+    left: 833px;
+}
+
+.step2b2a{
+    position: absolute;
+    top: 406px;
+    left: 834px;
+}
+
+.step2b2b{
+    position: absolute;
+    top: 494px;
+    left: 832px;
+}
+
+.step2b2c{
+    position: absolute;
+    top: 532px;
+    left: 830px;
+}
+
+.step2b3{
+    position: absolute;
+    top: 591px;
+    left: 820px;
+}
+
+.step2b4{
+    position: absolute;
+    top: 668px;
+    left: 830px;
+
+}
+
+.step4b1{
+    position: absolute;
+    top: 766px;
+    left: 830px;
+}
+
+.step4b2{
+    position: absolute;
+    top: 824px;
+    left: 830px;
+}
+
+.step4b3{
+    position: absolute;
+    top: 901px;
+    left: 831px;
+}
+
+.step4b4{
+    position: absolute;
+    top: 960px;
+    left: 830px;
+}
+
+.step4b5{
+    position: absolute;
+    top: 998px;
+    left: 831px;
+}
+
+.last-i{
+    position: absolute;
+    top: 295px;
+    left: 150px;
+}
+
+.first-i{
+    position: absolute;
+    top: 295px;
+    left: 400px;
+}
+
+.middle-i{
+    position: absolute;
+    top: 295px;
+    left: 623px;
+}
+
+.street-i{
+    position: absolute;
+    top: 345px;
+    left: 130px;
+}
+
+.city-i{
+    position: absolute;
+    top: 345px;
+    left: 566px;
+}
+
+.state{
+    position: absolute;
+    top: 345px;
+    left: 753px;
+}
+
+.zip{
+    position: absolute;
+    top: 345px;
+    left: 840px;
+    
+}
+
+.dob{
+    position: absolute;
+    top: 400px;
+    left: 100px;
+    
+}
+
+.social_background{
+    display: inline-block;
+    width: 183px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    top: 402px;
+    left: 247px;
+}
+
+.social-i{
+    background-color: white;
+    position: absolute;
+    top: 400px;
+    left: 285px;
+    
+}
+
+.email{
+    position: absolute;
+    top: 400px;
+    left: 500px;
+    
+}
+
+.phone{
+    position: absolute;
+    top: 400px;
+    left: 800px;
+}
+
+.arn{
+    position: absolute;
+    top: 560px;
+    left: 580px;
+}
+
+.expirydate{
+    position: absolute;
+    top: 588px;
+    left: 580px;
+}
+
+.arn2{
+    position: absolute;
+    top: 676px;
+    left: 375px;
+}
+
+.admission{
+    position: absolute;
+    top: 717px;
+    left: 290px;
+}
+
+.passport{
+    position: absolute;
+    top: 759px;
+    left: 263px;
+}
+
+#i9sign{
+    height: 70px;
+    position: absolute;
+    top: 816px;
+    left: 100px;
+}

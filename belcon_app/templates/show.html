@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        .left {
+            display: inline-block;
+        }
+
+        .right {
+            display: inline-block;
+            margin-left: 450px;
+        }
+
+        .employees {
+            margin-top: 60px;
+        }
+
+        #logout {
+            color: black;
+            padding: 5px;
+        }
+
+        #show{
+            padding: 10px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Welcome Admin</h1>
+        </div>
+        <div class="right">
+            <a href="/logout"><button id="logout">Logout</button></a>
+
+        </div>
+        <div class="employees">
+            <h4>All Employees</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Start Date</th>
+                        <th>Full Name</th>
+                        <th>Forms</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for one_employee in employee reversed %}
+                    <tr>
+
+                        <td>{{one_employee.id}}</td>
+                        <td>{{one_employee.start_date }}</td>
+                        <td>{{one_employee.first_name}} {{one_employee.last_name}}</td>
+                        <td><a href="/view/{{one_employee.id}}" target="_blank"><button id="show"> View </button></a></td>
+                        <td><a href="/delete/{{one_employee.id}}"><button id="show"> Delete </button></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

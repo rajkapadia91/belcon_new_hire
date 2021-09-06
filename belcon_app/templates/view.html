@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/view.css' %}" media="all"> 
+</head>
+
+<body>
+    <div class="wrapper">
+    <div class="w4-page1">
+    <img src="{% static 'img/w-4-form.jpeg' %}" class="w-i-form"/>
+    {% for one_view in view_current %}
+    <p class="first">{{one_view.first_name}} {{one_view.middle_initial}}</p>
+    <p class="last">{{one_view.last_name}}</p>
+    <p class="social">{{view_social}}</p>
+    <p class="street">{{one_view.street}}</p>
+    <p class="city">{{one_view.city}}, {{one_view.state}}, {{one_view.zip_code}}</p>
+    <p class="step3_a">{{one_view.step3_a}}</p>
+    <p class="step3_b">{{one_view.step3_b}}</p>
+    <p class="step3c_total">{{one_view.step3c_total}}</p>
+    <p class="step4_a">{{one_view.step4_a}}</p>
+    <p class="step4_b">{{one_view.step4_b}}</p>
+    <p class="step4_c">{{one_view.step4_c}}</p>
+
+    <img src="{{one_view.signature}}" id="w41">
+
+</div>
+</div>
+
+
+
+<div class="pagebreak"></div>
+
+<div class="w4-page1">
+    <img src="{% static 'img/w4page2.jpeg' %}" class="w-i-form"/>
+</div>
+
+
+<div class="pagebreak"></div>
+
+<div class="wrapper">
+<div class="w4-page1">
+    <img src="{% static 'img/w4page3.jpeg' %}" class="w-i-form"/>
+<p class="step2b1">{{one_view.step2b1}}</p>
+<p class="step2b2a">{{one_view.step2b2a}}</p>
+<p class="step2b2b">{{one_view.step2b2b}}</p>
+<p class="step2b2c">{{one_view.step2b2c}}</p>
+<p class="step2b3">{{one_view.step2b3}}</p>
+<p class="step2b4">{{one_view.step2b4}}</p>
+<p class="step4b1">{{one_view.step4b1}}</p>
+<p class="step4b2">{{one_view.step4b2}}</p>
+<p class="step4b3">{{one_view.step4b3}}</p>
+<p class="step4b4">{{one_view.step4b4}}</p>
+<p class="step4b5">{{one_view.step4b5}}</p>
+
+</div>
+</div>
+
+<div class="pagebreak"></div>
+<div class="w4-page1">
+    <img src="{% static 'img/w4page4.jpeg' %}" class="w-i-form"/>
+</div>
+
+<div class="pagebreak"></div>
+<div class="wrapper">
+    <div class="w4-page1">
+        <img src="{% static 'img/i9p1.jpeg' %}" class="w-i-form"/>  
+        <p class="last-i">{{one_view.last_name}}</p>
+        <p class="first-i">{{one_view.first_name}}</p>
+        <p class="middle-i">{{one_view.middle_initial}}</p>
+        <p class="street-i">{{one_view.street}}</p>
+        <p class="city-i">{{one_view.city}}</p>
+        <p class="state">{{one_view.state}}</p>
+        <p class="zip">{{one_view.zip_code}}</p>
+        <p class="dob">{{one_view.date_of_birth}}</p>
+        <div class="social_background"></div>
+        <p class="social-i">{{view_social}}</p>
+        <p class="email">{{one_view.email}}</p>
+        <p class="phone">{{one_view.cell_phone}}</p>
+        <p class="arn">{{one_view.alien_restriation_number}}</p>
+        <p class="expirydate">{{one_view.expiry_date}}</p>
+        <p class="arn2">{{one_view.alien_restriation_number2}}</p>
+        <p class="admission">{{one_view.form_admission_number}}</p>
+        <p class="passport">{{one_view.foreign_passport_number}}</p>
+        <img src="{{one_view.signature}}" id="i9sign">
+
+    </div>
+</div>
+
+<div class="pagebreak"></div>
+<div class="w4-page1">
+    <img src="{% static 'img/i9p2.jpeg' %}" class="w-i-form"/>
+</div>
+
+<div class="pagebreak"></div>
+<div class="w4-page1">
+    <img src="{% static 'img/i9p3.jpeg' %}" class="w-i-form"/>
+</div>
+<div class="pagebreak"></div>
+<div class="w4-page1">
+    <img style="max-height: 500px;" src="https://awsnewhirebelcon.s3.us-east-2.amazonaws.com/{{one_view.direct_deposit_check}}" alt="direct_deposit_check">
+    <img style="max-height: 500px;" src="https://awsnewhirebelcon.s3.us-east-2.amazonaws.com/{{one_view.id_1}}" alt="direct_deposit_check">
+    <img style="max-height: 500px;" src="https://awsnewhirebelcon.s3.us-east-2.amazonaws.com/{{one_view.id_2}}" alt="direct_deposit_check">
+</div>
+{% endfor %}
+
+</body>
+</html>
