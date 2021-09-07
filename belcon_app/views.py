@@ -13,6 +13,10 @@ def success(request):
 def create_profile(request):
     if request.method == "POST":
         expiry_date = ''
+        phone_f3 = request['field3_p1']
+        phone_m3 = request['field3_p2']
+        phone_l4 = request['field3_p3']
+        phone_number_formatted = f'{phone_f3}-{phone_m3}-{phone_l4}'
         orignal_social = request.POST['field5']
         formated_social = f'{orignal_social[0]}{orignal_social[1]}{orignal_social[2]}-{orignal_social[3]}{orignal_social[4]}-{orignal_social[5]}{orignal_social[6]}{orignal_social[7]}{orignal_social[8]}'
         message = formated_social
@@ -29,7 +33,7 @@ def create_profile(request):
             middle_initial=request.POST['minitial'], 
             last_name=request.POST['lastname'], 
             date_of_birth=request.POST['field2'], 
-            cell_phone=request.POST['field3'], 
+            cell_phone=phone_number_formatted, 
             email=request.POST['field4'], 
             social_security=base64_message, 
             street=request.POST['field6'], 
