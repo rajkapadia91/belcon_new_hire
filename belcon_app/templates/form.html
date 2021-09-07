@@ -117,15 +117,15 @@
 
                     <label for="field16"><span>I hereby consent and agree to give a specimen of my urine at a medical
                             facility designated by Bel-Con, if Bel-Con randomly chooses to test from
-                            Drugs/Alcohol. <span class="required">*</span></span><input type="radio" value="none" id="radio_3" name="field16" />Yes
-                        <input type="radio" value="none" id="radio_4" name="field16" />No
+                            Drugs/Alcohol. <span class="required">*</span></span><input type="radio"  value="Yes" id="radio_3" name="field16" required />Yes
+                        <input type="radio" value="No" id="radio_4" name="field16" />No
                     </label>
                     <br><br><br><br><br><br>
 
                     <div class="form-style-2-heading">Banking Information</div>
 
-                    <label for="field17" onchange="yesnoCheck()"><span>Direct Deposit</span><input type="radio" value="Yes" id="radio_5"
-                            name="field17" />Yes
+                    <label for="field17" onchange="yesnoCheck()"><span>Direct Deposit</span><input  type="radio" value="Yes" id="radio_5"
+                            name="field17" required />Yes
                         <input type="radio" value="No" id="radio_6" name="field17" />No
                     </label>
                 
@@ -154,7 +154,7 @@
                     <div class="form-style-2-heading">W-4 Employee Withholding Allowances Information</div>
 
                     <label for="field21"><span>1a. Filing Status:</span><select required name="field21" class="select-field">
-                            <option value="" disabled selected hidden></option>
+                            <option value="None" disabled selected hidden></option>
                             <option value="single">Single</option>
                             <option value="joint">Married filing together</option>
                             <option value="separate">Married filing separate</option>
@@ -164,7 +164,7 @@
 
                     <label for="field22"><span>1b. Total Number of Allowances you are claiming:</span><select
                             required name="field22" class="select-field">
-                            <option value="" disabled selected hidden></option>
+                            <option value="None" disabled selected hidden></option>
                             <option value="zero">0</option>
                             <option value="one">1</option>
                             <option value="two">2</option>
