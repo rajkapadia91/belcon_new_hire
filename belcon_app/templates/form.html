@@ -63,7 +63,7 @@
                             class="input-field" name="field7" value="" required/></label>
 
                     <label for="field8"><span>State:<span class="required">*</span></span><input type="text"
-                            class="input-field" name="field8" maxlength="2" value="" required/></label>
+                            class="input-field" name="field8" onKeyPress="if(this.value.length==2) return false;" required/></label>
 
                     <label for="field9"><span>Zipcode:<span class="required">*</span></span><input type="text"
                             class="input-field" name="field9" value="" pattern="[0-9]{5}" required/></label>
