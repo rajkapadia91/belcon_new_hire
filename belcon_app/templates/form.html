@@ -42,8 +42,8 @@
                             class="input-field" name="field2" value="" required/></label>
 
                     <label for="field3"><span>Cell Phone:<span class="required">*</span></span><input type="text"
-                            class="tel-number-field" name="field3_p1" value="" maxlength="3" />-<input type="text"
-                            class="tel-number-field" name="field3_p2" value="" maxlength="3" />-<input type="text"
+                            class="tel-number-field" name="field3_p1" value="" maxlength="3" required />-<input type="text"
+                            class="tel-number-field" name="field3_p2" value="" maxlength="3" required />-<input type="text"
                             class="tel-number-field" name="field3_p3" value="" maxlength="4" required/></label>
 
                     <label for="field4"><span>Email <span class="required">*</span></span><input type="email"
@@ -85,7 +85,7 @@
                     <label for="field12"><span>Local# <span class="required">*</span></span><input type="text"
                             class="input-field" name="field12" value="" required/></label>
 
-                    <label for="field13"><span>Position <span class="required">*</span></span><select name="field13" class="select-field">
+                    <label for="field13"><span>Position <span class="required">*</span></span><select required name="field13" class="select-field">
                             <option value="" disabled selected hidden></option>
                             <option value="year1">Apprentice Year 1</option>
                             <option value="year2">Apprentice Year 2</option>
@@ -96,13 +96,14 @@
                             <option value="journeyman">Journeyman</option>
                         </select></label>
 
-                    <label for="field14"><span>Gender <span class="required">*</span></span><input type="radio" value="none" id="radio_1"
-                            name="field14" />Male
-                        <input type="radio" value="none" id="radio_2" name="field14" />Female
-                    </label>
+                        <label for="field14"><span>Gender <span class="required">*</span></span><select required name="field14" class="select-field">
+                            <option value="None" disabled selected hidden></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select></label>
 
                     <label for="field15"><span>Company Anti-Discrimination Policy Selection: <span class="required">*</span></span><select
-                            name="field15" class="select-field">
+                           required name="field15" class="select-field">
                             <option value="" disabled selected hidden></option>
                             <option value="hispanic">Hispanic or Latino</option>
                             <option value="white">White</option>
@@ -152,7 +153,7 @@
 
                     <div class="form-style-2-heading">W-4 Employee Withholding Allowances Information</div>
 
-                    <label for="field21"><span>1a. Filing Status:</span><select name="field21" class="select-field">
+                    <label for="field21"><span>1a. Filing Status:</span><select required name="field21" class="select-field">
                             <option value="" disabled selected hidden></option>
                             <option value="single">Single</option>
                             <option value="joint">Married filing together</option>
@@ -162,7 +163,7 @@
                         </select></label>
 
                     <label for="field22"><span>1b. Total Number of Allowances you are claiming:</span><select
-                            name="field22" class="select-field">
+                            required name="field22" class="select-field">
                             <option value="" disabled selected hidden></option>
                             <option value="zero">0</option>
                             <option value="one">1</option>
@@ -179,7 +180,7 @@
                     <h3><span>Complete Steps 2–4 ONLY if they apply to you; otherwise, skip to I-9 Employment
                             Eligibility Verification.</span> </h3><br><br>
 
-                            <label for="field23"><span>Complete this step and select only if you had more than 1 job but only had 2 jobs in total. Otherwise, we will default to no.</span><select
+                            <label for="field23"><span>Complete this step and select only if you had more than 1 job but only had 2 jobs in total. Otherwise, we will default to "No".</span><select
                                 name="field23" class="select-field">
                                 <option value="Yes">Yes</option>
                                 <option selected value="No">No</option>
@@ -296,7 +297,7 @@
                     <label for="field39"><span>I am aware that federal law provides for imprisonment and/or fines for
                             false statements or use of false documents in connection with this information. <br><br>I
                             attest, under penalty of perjury, that I am:</span><br><br><br><br><br><select
-                            name="field39" class="select-field" onchange="immi_status()" id="immigration_status">
+                            name="field39" required class="select-field" onchange="immi_status()" id="immigration_status">
                             <option value="" disabled selected hidden></option>
                             <option value="citizen">1. Citizen of the United States</option>
                             <option value="noncitizen">2. A noncitizen of the United States</option>
