@@ -33,7 +33,7 @@ def create_profile(request):
             middle_initial=request.POST['minitial'], 
             last_name=request.POST['lastname'], 
             date_of_birth=request.POST['field2'], 
-            cell_phone=phone_number_formatted, 
+            cell_phone= phone_number_formatted,
             email=request.POST['field4'], 
             social_security=base64_message, 
             street=request.POST['field6'], 

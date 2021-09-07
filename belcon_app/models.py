@@ -31,7 +31,7 @@ class UserDetails(models.Model):
     middle_initial = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     date_of_birth = models.DateField()
-    cell_phone = models.CharField(max_length=15)
+    cell_phone = models.CharField(max_length=20)
     email = models.CharField(max_length=255)
     social_security = models.CharField(max_length=255)
     street = models.CharField(max_length=255)
