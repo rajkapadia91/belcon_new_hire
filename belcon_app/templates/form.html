@@ -313,7 +313,7 @@
                             expiration date or do not fill if non applicable</span></h3><br><br>
 
                     <label for="field41"><span>Expiration Date, if applicable :</span><br><input type="date"
-                            class="input-field" name="field41" value="" /></label><br><br>
+                          id="expiry_date"  class="input-field" name="field41" value="" /></label><br><br>
 
                     <h3><span>If you selected option 4, you will have to fill only 1 of the 3 below: </span></h3>
                     <br><br>
@@ -533,6 +533,7 @@ if (document.getElementById("radio_5").checked) {
             document.getElementById('alien_1').readOnly = true;
             document.getElementById('alien_2').readOnly = true;
             document.getElementById('alien_3').readOnly = true;
+            document.getElementById('expiry_date').readOnly = true;
             var y = document.getElementById("changed").innerHTML
             console.log(y)
         }
@@ -541,6 +542,7 @@ if (document.getElementById("radio_5").checked) {
             document.getElementById('alien_1').readOnly = false;
             document.getElementById('alien_2').readOnly = false;
             document.getElementById('alien_3').readOnly = false;
+            document.getElementById('expiry_date').readOnly = false;
             console.log("alien")
         }
         else{
@@ -548,6 +550,7 @@ if (document.getElementById("radio_5").checked) {
             document.getElementById('alien_1').readOnly = true;
             document.getElementById('alien_2').readOnly = true;
             document.getElementById('alien_3').readOnly = true;
+            document.getElementById('expiry_date').readOnly = true;
         }
     }
 
