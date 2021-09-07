@@ -51,7 +51,7 @@ class UserDetails(models.Model):
     account_number = models.CharField(max_length=255 ,blank=True, null=True , default="")
     w4filing_status = models.CharField(max_length=255 ,blank=True, null=True , default="")
     total_number_allowances = models.CharField(max_length=255  ,blank=True, null=True , default="")
-    step2 = models.CharField(max_length=255  ,blank=True, null=True , default="")
+    step2 = models.CharField(max_length=255, blank=True, null=True, default="None")
     step3_a = models.CharField(max_length=255 ,blank=True, null=True , default="")
     step3_b = models.CharField(max_length=255 ,blank=True, null=True , default="")
     step3c_total = models.CharField(max_length=255 ,blank=True, null=True , default="")
